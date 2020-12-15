@@ -1,7 +1,30 @@
 #include <iostream>
+#include <cmath>
+# define M_PI           3.14159265358979323846  /* pi */
 
 using namespace std;
 
+double deg2rad(double x){
+    return (x*M_PI)/180;
+}
+double rad2deg(double y){
+    return (y*180)/M_PI;
+}
+double findXComponent(double l1, double l2, double a1,double a2){
+    return (l1*cos(a1))+(l2*cos(a2));
+}
+double findYComponent(double l1,double l2,double a1,double a2){
+    return (l1*sin(a1))+(l2*sin(a2));
+}
+double pythagoras(double l1,double l2){
+    return sqrt(pow(l1,2)+pow(l2,2));
+}
+void showResult(double a,double b){
+    cout << "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" << endl;
+    cout << "Length of the resultant vector = " << a << endl;
+    cout << "Direction of the resultant vector (deg) = " << b << endl;
+    cout << "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"; 
+}
 int main(){
     double l1,l2,a1,a2,xcomp,ycomp,result_vec_length,result_vec_direction;
     cout << "Enter length of the first vector: ";
